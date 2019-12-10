@@ -1,0 +1,16 @@
+name: 'Docker Action with Github'
+description: 'used to practice docker with github'
+inputs:
+  who-to-greet:
+    description: 'someone to greet'
+    required: true
+    default: 'World'
+outputs:
+  time:
+    description: 'the current time :)'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.who-to-greet }}
